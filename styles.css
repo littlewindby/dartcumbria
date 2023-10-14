@@ -9,47 +9,84 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    background-image: url('background.jpg'); /* Replace 'your-image-file.jpg' with the actual file name and path */
-    background-size: cover; /* This scales the image to cover the entire viewport */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    background-image: url('background.jpg'); /* Replace with your background image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+ 
 }
 
 /* Header styles */
 header {
-    /* Set the header height to a fixed value */
-    height: 150px; /* Adjust the height as needed */
-    background-image: url('banner.jpg'); /* Replace with your banner image file path */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center; /* Center the banner image horizontally and vertically */
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url('cumrbia.mp4') no-repeat center/cover fixed; /* Background shorthand */
+    height: 100vh;
+    position: relative;
 }
-/* Style the <h1> title inside the .title-banner div */
+
+/* Style the title banner */
 .title-banner {
-    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background color for readability */
+    width: 1280px; /* Set the width to 970px */
+    height: 350px; /* Set the height to 250px */
+    position: absolute;
+    top: 40%;
+    bottom:30%;
+    left: 25%;
+    right:25%;
+    transform: translate(-50%, -50%);
+    background: transparent; /* Set the background to be transparent */
     color: #fff;
     padding: 20px;
-    border-radius: 5px; /* Add rounded corners for the banner */
+    border-radius: 5px;
+    animation: bounceTitle 20s linear infinite; /* Add a CSS animation */
+}
+/* Style for h1 element */
+h1 {
+    font-family: Copperplate, Papyrus, fantasy;
+    color: #1f1d20; /* Red color for h1 */
+}
+
+/* Style for h2 element */
+h2 {
+    font-family: Georgia, serif;
+    color: #e3e778; /* Green color for h2 */
+}
+/* Define the CSS animation */
+@keyframes bounceTitle {
+    0%, 100% {
+        transform: translate(-50%, -50%);
+    }
+    25% {
+        transform: translate(calc(50% - 200px), -50%);
+    }
+    50% {
+        transform: translate(-50%, calc(50% - 100px)); /* Adjust the values to bounce up */
+    }
+    75% {
+        transform: translate(calc(50% - 200px), -50%);
+    }
+}
+
+header video {
+    width: 100%; /* Make the video responsive and take up the full width of the container */
+    height: 100%; /* Make the video responsive and take up the full height of the container */
+    object-fit: cover; /* Ensure the video covers the container */
 }
 
 /* Container styles */
 .container {
-    /* Set the container to fill the remaining viewport height */
-    min-height: calc(100vh - 150px); /* Adjust the header height as needed */
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center;
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
+    width: 1245px; /* Set the width to match the map's width (1200px) */
+    height: 850px; /* Set the height to match the map's height (800px) */
+    margin: 0 auto; /* Center the container horizontally */
     padding: 20px;
-    background-color: rgba(218, 151, 17, 0.8);
+    background-color: rgba(75, 41, 41, 0.8);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+
 
 /* Map styles */
 .map {
